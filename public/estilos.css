@@ -1,0 +1,72 @@
+body{
+  margin: auto;
+  width: 100vh;
+  height: 100vh;
+}
+.title{
+  margin: auto;
+  text-align: center;
+}
+.game{
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  border: 2px solid rgb(75, 199, 199);
+  overflow: hidden;
+  margin: auto;
+  max-height: 60%;
+  max-width: 60%;
+  background: white;
+}
+.color{
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.red{
+  background: rgb(202, 22, 22);
+}
+.red.light{
+  background: rgb(255, 29, 29);
+}
+.violeta{
+  background: rgb(138, 10, 138);
+}
+.violeta.light{
+  background: rgb(255, 0, 255);
+}
+.verde{
+  background: rgb(5, 121, 5);
+}
+.verde.light{
+  background: rgb(7, 226, 7);
+}
+.naranja{
+  background: rgb(150, 98, 2);
+}
+.naranja.light{
+  background: rgb(255, 168, 5);
+}
+.btnStart{
+  width: 200px;
+  height: 80px;
+  background: rgb(24, 110, 197);
+  position: absolute;
+  top: calc(50% - 60px);
+  left: calc(50% - 100px);
+  box-shadow: 0 0 2px 2px royalblue;
+  border: 1px solid dodgerblue;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+
+}
+.hide{
+  display: none;
+}
