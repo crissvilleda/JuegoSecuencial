@@ -87,6 +87,11 @@ body{
   display: none;
 }
 
+.informacion{
+  text-align: center;
+  font-size: 12px;
+  color: black;
+}
 /*estilo snackbar*/
 #snackbar{
   font-family: sans-serif;

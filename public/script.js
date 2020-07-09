@@ -5,7 +5,7 @@ const violeta = document.getElementById('violeta')
 const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
 const snackbar = document.getElementById('snackbar')
-const ULTIMO_NIVEL = 3
+const ULTIMO_NIVEL = 10
 
 class Game {
   constructor(){
@@ -91,7 +91,7 @@ class Game {
   }
   gano(){
     const h2 = document.createElement('h2')
-    h2.innerHTML= "Felicidades Ganaste El Juego"
+    h2.innerHTML= "Felicidades ganaste el Juego"
     snackbar.appendChild(h2)
     snackbar.classList.add('show')
     setTimeout(()=> {
