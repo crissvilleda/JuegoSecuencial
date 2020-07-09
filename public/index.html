@@ -13,22 +13,22 @@
   <div class="title">
     <h1>Juego en Javascript</h1>
   </div>
-  <br>
-  <br>
-  <br>
   <div class="game">
     <div class="row">
-      <div id="red" class="color red left" data-color="red"></div>
+      <div id="rojo" class="color rojo left" data-color="rojo"></div>
       <div id="violeta" class="color violeta right" data-color="violeta"></div>
     </div>
     <div class="row">
       <div id="naranja" class="color naranja left" data-color="naranja"></div>
       <div id="verde" class="color verde right" data-color="verde"></div>
     </div>
-     <button id="btnStart" class="btnStart" onclick="startGame()">Empezar Juego</button>
   </div>
+  <div class="btn">
+    <button id="btnStart" class="btnStart" onclick="startGame()">Empezar Juego</button>
+  </div>
+  <div id="snackbar"></div>
 
-
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
