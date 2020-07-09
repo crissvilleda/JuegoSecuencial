@@ -1,0 +1,6 @@
+{
+  "hosting": {
+    "site": "juego-secuencial",
+    "public": "public"
+  }
+}
