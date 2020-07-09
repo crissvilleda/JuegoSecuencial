@@ -45,10 +45,10 @@ body{
   float: right;
 }
 .rojo{
-  background: rgb(202, 22, 22);
+  background: rgb(177, 20, 20);
 }
 .rojo.light{
-  background: rgb(255, 29, 29);
+  background: rgb(255, 0, 0);
 }
 .violeta{
   background: rgb(138, 10, 138);
