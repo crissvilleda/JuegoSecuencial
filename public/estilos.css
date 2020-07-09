@@ -89,20 +89,41 @@ body{
 
 /*estilo snackbar*/
 #snackbar{
+  font-family: sans-serif;
   visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #707070;
-  color: black;
+  min-width: 300px;
+  margin-left: -150px;
+  background-color: #3f7ed1;
+  color:white;
   text-align: center;
-  border-radius: 5px;
-  padding: 16px;
+  border-radius: 10px;
+  padding: 15px;
   position: fixed;
   z-index: 1;
   left: 50%;
-  bottom: 30px;
+  top: 35px;
 }
 #snackbar.show{
   visibility: visible;
-  -webkit-animation: fa ;
+  -webkit-animation: fadeIn 0.5s, fadeOut 0.5s 2s;
+  animation: fadeIn 0.5s, fadeOut 0.5s 2s;
+}
+
+@-webkit-keyframes fadeIn{
+  from { top: 0; opacity: 0;}
+  to {top: 35px; opacity: 1;}
+}
+@keyframes fadeIn{
+  from { top: 0; opacity: 0;}
+  to {top: 35px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeOut {
+  from { top: 35px; opacity: 1;}
+  to {top:35px; opacity: 0;}
+}
+
+@keyframes fadeOut {
+  from { top: 35px; opacity: 1;}
+  to {top: 35px; opacity: 0;}
 }

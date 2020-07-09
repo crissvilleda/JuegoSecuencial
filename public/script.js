@@ -4,9 +4,8 @@ const rojo = document.getElementById('rojo')
 const violeta = document.getElementById('violeta')
 const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
-const ULTIMO_NIVEL = 10
-
-let snackbar = ()=>{}
+const snackbar = document.getElementById('snackbar')
+const ULTIMO_NIVEL = 3
 
 class Game {
   constructor(){
@@ -17,7 +16,7 @@ class Game {
   inicializar(){
     this.elegirColor = this.elegirColor.bind(this)
     this.siguienteNivel = this.siguienteNivel.bind(this)
-    btnStart.classList.add('hide')
+    this.toggleBtnStart()
     this.nivel = 1 
     this.colores ={
       rojo, violeta, naranja, verde
@@ -30,6 +29,13 @@ class Game {
     this.subnivel = 0
     this.iluminarSecuencia()
     this.agregarEventosClick()
+  }
+  toggleBtnStart(){
+    if(btnStart.classList.contains('hide')){
+      btnStart.classList.remove('hide')
+    }else {
+      btnStart.classList.add('hide')
+    }
   }
   trasformarNumeroAColor(num){
     switch(num){
@@ -82,26 +88,48 @@ class Game {
     this.colores.naranja.removeEventListener('click', this.elegirColor)
     this.colores.verde.removeEventListener('click', this.elegirColor)
 
+  }
+  gano(){
+    const h2 = document.createElement('h2')
+    h2.innerHTML= "Felicidades Ganaste El Juego"
+    snackbar.appendChild(h2)
+    snackbar.classList.add('show')
+    setTimeout(()=> {
+      snackbar.classList.remove('show')
+      snackbar.removeChild(h2)
+    },2500)
+    this.inicializar()
+  }
+  perdio(){
+    const h2 = document.createElement('h2')
+    h2.innerHTML = 'Perdiste'
+    snackbar.appendChild(h2)
+    snackbar.classList.add('show')
+    setTimeout(()=> {
+      snackbar.classList.remove('show')
+      snackbar.removeChild(h2)
+    },2500)
+    this.eliminarEventosClick()
+    this.inicializar()
 
   }
   elegirColor(ev){
     const nombreColor = ev.target.dataset.color
     const numeroColor = this.trasformarColorANumero(nombreColor)
     this.iluminarColor(nombreColor)
-    console.log(`${nombreColor} ${numeroColor}`)
     if(numeroColor === this.secuencia[this.subnivel]){
       this.subnivel++
       if(this.subnivel===this.nivel){
         this.nivel++
         this.eliminarEventosClick()
         if(this.nivel ===(ULTIMO_NIVEL + 1)){
-          //Gano
+          this.gano()
         }else {
           setTimeout(this.siguienteNivel,1500)
         }
       }
     } else {
-      //Perdio
+      this.perdio()
     }
 
   }
